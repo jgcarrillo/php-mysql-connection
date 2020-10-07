@@ -36,4 +36,6 @@
             echo '<a href="login.php">[ Conectar ]</a>';
         }
     }
+    // Closing connection
+    $conn->cerrarConexion();
 ?>
