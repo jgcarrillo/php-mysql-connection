@@ -22,10 +22,15 @@
             $_SESSION['login_user'] = $nombreEnviado;
             $_SESSION['pass_user'] = $passEnviada;
 
+            // Free memory
+            $stmt->free();
+
             echo 'Bienvenido';
         } else {
             echo '<p>Acceso no autorizado</p>';
             echo '<a href="login.php">[ Conectar ]</a>';
         }
+        // Closing connection
+        $conn->cerrarConexion();
     }
 ?>
