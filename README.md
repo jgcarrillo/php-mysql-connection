@@ -1,4 +1,4 @@
-## Utilización de bases de datos mediante MySQLi y PDO
+# Utilización de bases de datos mediante MySQLi y PDO
 
 Conexión de PHP con base de datos mediante dos de los drivers más usados como son **PDO y MySQLi*.
 
@@ -6,11 +6,11 @@ Se han utilizado consultas preparadas y una encapsulación de código en un ejem
 
 **IMPORTANTE**: Si vas a usar este proyecto es necesario cambiar la configuración del archivo ```config_db.php``` así como la tabla que se hace referencia en las consultas.
 
-### Tabla de contenidos
+## Tabla de contenidos
 1. [Conexión con MySQLi](#1-Conexión-con-MySQLi)
 2. [Conexión con PDO](#2-Conexión-con-PDO)
 
-#### 1. Conexión con MySQLi
+### 1. Conexión con MySQLi
 
 Para poder conectarnos a una base de datos con este driver desde un script de PHP necesitamos los siguientes datos:
 
@@ -51,7 +51,7 @@ Hecho esto, sería necesario requerir este archivo en aquellos scripts de PHP en
 
 Llegados a este punto tendríamos **dos formas** de realizar las consultas a la base de datos, mediante queries o mediante consultas preparadas.
 
-##### 1.1 Consultas mediantes queries
+#### 1.1 Consultas mediantes queries
 
 Este tipo de consultas es la más insegura y permitiría *SQL Injection* si no validamos antes los datos, el código sería:
 
@@ -63,7 +63,7 @@ Donde a la consulta se le pasan directamente los datos que envía el usuario por
 
 Una vez hecha la consulta sería necesario liberar la memoria de la misma, con ```$stmt->free()``` así como cerrar la conexión con $conn->cerrarConexion()```.
 
-##### 1.2 Consultas preparadas
+#### 1.2 Consultas preparadas
 
 Esta técnica consiste en preparar la consulta antes de lanzarla y aprovechar para rellenar los valores de la misma mediante **variables** en lugar de consultas.
 
@@ -100,7 +100,7 @@ $_SESSION['pass_user'] = $fila->pass;
 
 La segunda, asigna variables a campos obtenidos en la consulta con ```$query->bind_result($id, $nom, $con);```, donde sería necesario incluir tantas variables como campos devuelve la consulta. Con esta última opción, los datos se procesan con ```$stmt->fetch()```
 
-#### 2. Conexión con PDO
+### 2. Conexión con PDO
 
 **PDO** significa **PHP Data Objects**, Objetos de Datos de PHP, una extensión
 para acceder a bases de datos. PDO permite acceder a diferentes sistemas de
